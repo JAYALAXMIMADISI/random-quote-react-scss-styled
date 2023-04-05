@@ -1,0 +1,108 @@
+$primary_1: #a2b9bc;
+$primary_2: #41c9ab;
+$primary_3: #f5f6f6;
+$myFont: Helvetica, sans-serif;
+$myColor: red;
+$myFontSize: 18px;
+$myWidth: 680px;
+
+@use 'mixins' as mixin;
+
+
+
+.main-header {
+  background-color: $primary_1; 
+}
+
+    div {
+        
+    @include mixin.center;
+    
+    label {
+        color:  $primary_1;
+    }
+    h3 {
+        color: $primary_2;
+        ;
+    }
+}
+
+.author {
+    
+   
+    animation: moveInLeft 5s infinite;
+}
+
+@media (min-width: 768px)  {
+    body {
+      @include mixin.background;
+      display: flex;
+     justify-content: center;
+    }
+  }
+
+
+
+  .label {
+    @include mixin.button-animation;
+    margin-top: 20px;
+}
+
+
+
+
+.center{
+    padding: 10px;
+}
+
+.container{
+    margin-top: 100px;
+    border:2px solid white;
+   
+}
+
+
+
+
+.author{
+   animation: moveOutLeft 5s infinite; 
+}
+
+
+
+@keyframes moveInLeft {
+    0% { 
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+
+    80% { 
+        transform: translateX(10px);
+    }
+
+    100% { 
+        opacity: 1;
+        transform: rotate(10px);
+    }
+}
+
+@keyframes moveOutLeft {
+    0% { 
+        opacity: 0;
+        transform: translateY(-100px);
+    }
+
+    80% { 
+        transform: translateY(10px);
+    }
+
+    100% { 
+        opacity: 1;
+        transform: rotate(10px);
+    }
+    
+}
+
+
+
+
