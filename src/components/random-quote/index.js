@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Button } from "../../styles";
+import { getQuote } from "./api";
 import ShowQuote from "./show-quote";
 
 export default function RandomQuote() {
@@ -12,6 +13,9 @@ export default function RandomQuote() {
     const quote = await fetch(`https://api.quotable.io/random`)
       .then((res) => res.json())
       .then((res) => setRandomQuote(res));
+    // getQuote()
+    //   .then((data) => setRandomQuote(data))
+    //   // .catch((e) => setError(true));
     setButtonColor("red");
   };
 
